@@ -1,27 +1,54 @@
 <!doctype html>
+<html ng-app="myApp">
 <head>
     <meta charset="utf-8">
 
     <title>My Parse App</title>
     <meta name="description" content="My Parse App">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="includes/css/reset.css">
     <link rel="stylesheet" href="includes/css/stylesheets/style.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script data-require="angular.js@1.0.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js" data-semver="1.0.7"></script>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
     <script type="text/javascript" src="includes/js/javascript.js"></script>
+    <script type="text/javascript" src="includes/js/app.js"></script>
+    <script type="text/javascript" src="includes/js/signup.js"></script>
+    <script type="text/javascript" src="includes/js/login.js"></script>
+    <script type="text/javascript" src="includes/js/logout.js"></script>
+    <script type="text/javascript" src="includes/js/posts.js"></script>
 </head>
 
 <body>
     <div id="main">
-        <h1>hello</h1>
-        <form id="post-form">
-            <p><input id="post-username" type="text" /></p>
-            <p><input id="post-password" type="text" /></p>
-            <p><input id="post-submit" type="submit" /></p>
+        <div id="current-user"></div>
+        <h1>Log Out</h1>
+            <div ng-controller="logout">
+                <button id="logout">Log Out</button>
+            </div><br/><br/>
+        <h1>Log In</h1>
+        <form ng-submit="login_form()" ng-controller="login">
+            <p>username: <input id="login-user" type="text" /></p>
+            <p>password: <input id="login-pass" type="password" /></p>
+            <p><input type="submit" /></p>
         </form>
-        <ul id="list-users">
-
+        <h1>Sign up</h1>
+        <form ng-submit="signup_form()" ng-controller="signup">
+            <p>username: <input id="username" type="text" /></p>
+            <p>password: <input id="password" type="password" /></p>
+            <p><input type="submit" /></p>
+        </form>
+        <h1>Add Post</h1>
+        <form ng-submit="post_form()" ng-controller="posts">
+            <p>Title: <input id="post-title" type="text" /></p>
+            <p>Content: <input id="post-content" type="text" /></p>
+            <p><input id="post-file" type="file"/></p>
+            <p><input type="submit" /></p>
+        </form>
+        <h1>Posts</h1>
+        <ul id="list-posts" ng-controller="posts">
+            <li ng-repeat="post in posts">
+                <p>username: {{ post.username }} => {{ post.title }}: {{ post.content }}</p>
+            </li>
         </ul>
     </div>
 </body>
