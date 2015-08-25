@@ -5,6 +5,7 @@ var app = angular.module('myApp',[
     'myApp.posts'
 ]);
 
+//
 Parse.initialize("YmjyJjNGA1QcCYQQ0C479gArZzWKBEgcwBe3kt7K", "NRJGn0tlpDY2By3mRPhlGcDFb0dclEQedm993YjV");
 
 //app.config(['$routeProvider', function($routeProvider){
