@@ -47,7 +47,14 @@
         <h1>Posts</h1>
         <ul id="list-posts" ng-controller="posts">
             <li ng-repeat="post in posts">
-                <p>username: {{ post.username }} => {{ post.title }}: {{ post.content }}</p>
+                <h3><a ng-href="{{ post.id }}">{{ post.title }}</a></h3>
+                <small></small>
+                <p class="post-content"></p>
+                <img src="" />
+                <form ng-submit="submit_comment(post.id)" id="post-comment-form">
+                    <textarea id="post-comment" placeholder="Comment"></textarea>
+                    <input type="submit" />
+                </form>
             </li>
         </ul>
     </div>

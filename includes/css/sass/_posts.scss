@@ -1,0 +1,8 @@
+#list-posts{
+  .post-content, img, small,#post-comment-form{
+    display: none;
+  }
+  #post-comment-form{
+    margin-top: 15px;
+  }
+}

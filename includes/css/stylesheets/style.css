@@ -587,3 +587,11 @@ td {
     page-break-after: avoid;
   }
 }
+/* line 2, ../sass/_posts.scss */
+#list-posts .post-content, #list-posts img, #list-posts small, #list-posts #post-comment-form {
+  display: none;
+}
+/* line 5, ../sass/_posts.scss */
+#list-posts #post-comment-form {
+  margin-top: 15px;
+}
